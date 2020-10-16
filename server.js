@@ -4,7 +4,7 @@ var fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 var jsonData = require("./db/db.json");
 var app = express();
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
