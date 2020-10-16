@@ -45,11 +45,12 @@ app.post("/api/notes", function (req, res) {
   });
 });
 
-
+// Here I request the id of the note that is wanting to be deleted. 
 app.delete("/api/notes/:id", function (req, res) {
   // What ever the user chooses to delete, it will collect that ID.
   const id = req.params.id;
 
+  // comparing to jsonData array and splicing out the undesired note. 
   for (i = 0; i < jsonData.length; i++) {
     if (jsonData[i].id === id) {
       jsonData.splice(i, 1);
@@ -67,6 +68,7 @@ app.delete("/api/notes/:id", function (req, res) {
   });
 });
 
+// listening to port. 
 app.listen(PORT, function () {
   console.log("App listening on PORT http://localhost:" + PORT);
 });
