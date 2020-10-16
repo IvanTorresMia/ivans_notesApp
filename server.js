@@ -1,17 +1,19 @@
+// Everything required to make this app. 
 var express = require("express");
 var path = require("path");
 var fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 var jsonData = require("./db/db.json");
+
+// stroing express into app and creating a port 
 var app = express();
 var PORT = process.env.PORT || 8080;
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Make Notes array here.
 
+// 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
