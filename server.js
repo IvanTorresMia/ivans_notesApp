@@ -26,10 +26,12 @@ app.get("/api/notes", function (req, res) {
 
 app.post("/api/notes", function (req, res) {
   var newNote = req.body;
-  console.log(newNote);
+  // console.log(newNote);
 
   // Give each Item an unique ID
   newNote.id = uuidv4();
+
+  // jsonData is acting as an array, so we are pushing to it. 
   jsonData.push(newNote);
 
   fs.writeFile("./db/db.json", JSON.stringify(jsonData), function finished(
@@ -41,7 +43,8 @@ app.post("/api/notes", function (req, res) {
 });
 
 app.delete("/api/notes/:id", function (req, res) {
-  var id = req.params.id;
+  // What ever the user chooses to delete, it will collect that ID.
+  const id = req.params.id;
 
   for (i = 0; i < jsonData.length; i++) {
     if (jsonData[i].id === id) {
