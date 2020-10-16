@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-// 
+// making paths to my index.html and my notes.html file
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
@@ -26,9 +26,9 @@ app.get("/api/notes", function (req, res) {
   res.json(jsonData);
 });
 
+// manipulating new note and sending it to my JSON file
 app.post("/api/notes", function (req, res) {
   var newNote = req.body;
-  // console.log(newNote);
 
   // Give each Item an unique ID
   newNote.id = uuidv4();
@@ -36,6 +36,7 @@ app.post("/api/notes", function (req, res) {
   // jsonData is acting as an array, so we are pushing to it. 
   jsonData.push(newNote);
 
+  // Writng to my JSON file
   fs.writeFile("./db/db.json", JSON.stringify(jsonData), function finished(
     err
   ) {
@@ -43,6 +44,7 @@ app.post("/api/notes", function (req, res) {
     res.json("Success!");
   });
 });
+
 
 app.delete("/api/notes/:id", function (req, res) {
   // What ever the user chooses to delete, it will collect that ID.
