@@ -74,7 +74,7 @@ app.delete("/api/notes/:id", function (req, res) {
 
 ## Author
 Ivan Torres
-* [GitHub-Repo](https://github.com/IvanTorresMia/READme-project-Ivan)
+* [GitHub-Repo](https://github.com/IvanTorresMia/ivans_notesApp)
 * [Deployed-Link](https://nameless-thicket-81807.herokuapp.com/notes)
 * [linkedIn](www.linkedin.com/in/ivan-torres-0828931b2)
 
