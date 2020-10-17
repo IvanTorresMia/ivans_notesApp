@@ -23,7 +23,7 @@ Hi and welcome to my note taker app! This is app is specifically made to make an
 
 
 ## Features
-![Employee-gif](./assets/Employee-app-gif.gif2.gif)
+![NoteGif](Note_App.gif)
 
 * Here is my app.post. In here I take the note wich the user is wanting to write, give it a unique ID using uuid() function. Then I push to my jsonData which is acting as an array. THen I write to the my json file. 
 ```
