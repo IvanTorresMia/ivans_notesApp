@@ -37,7 +37,7 @@ app.post("/api/notes", function (req, res) {
   jsonData.push(newNote);
 
   // Writng to my JSON file
-  fs.writeFile("./db/db.json", JSON.stringify(jsonData), function finished(
+  fs.writeFile("./db/db.json", JSON.stringify(jsonData, null, 2), function finished(
     err
   ) {
     console.log("all set");
@@ -60,7 +60,7 @@ app.delete("/api/notes/:id", function (req, res) {
   // Shortcut for above for loop
   //const filtered = jsonData.filter(note => note.id !== id);
 
-  fs.writeFile("./db/db.json", JSON.stringify(jsonData), function finished(
+  fs.writeFile("./db/db.json", JSON.stringify(jsonData, null, 2), function finished(
     err
   ) {
     console.log("all set");
